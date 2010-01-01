@@ -1,0 +1,27 @@
+This is Perl module WWW::Shorten::Flickr.
+
+INSTALLATION
+
+WWW::Shorten::Flickr installation is straightforward. If your CPAN shell is set up,
+you should just be able to do
+
+    % cpan WWW::Shorten::Flickr
+
+Download it, unpack it, then build it as per the usual:
+
+    % perl Makefile.PL
+    % make && make test
+
+Then install it:
+
+    % make install
+
+DOCUMENTATION
+
+WWW::Shorten::Flickr documentation is available as in POD. So you can do:
+
+    % perldoc WWW::Shorten::Flickr
+
+to read the documentation online with your favorite pager.
+
+Shinsuke Matsui
