@@ -1,6 +1,8 @@
 use inc::Module::Install;
 name 'WWW-Shorten-Flickr';
 all_from 'lib/WWW/Shorten/Flickr.pm';
+readme_from 'lib/WWW/Shorten/Flickr.pm';
+readme_pod_from 'lib/WWW/Shorten/Flickr.pm';
 
 requires $_ for (qw/ /);
 requires 'WWW::Shorten';

@@ -1,27 +1,38 @@
-This is Perl module WWW::Shorten::Flickr.
+NAME
+    WWW::Shorten::Flickr - Perl interface to flic.kr
 
-INSTALLATION
+SYNOPSIS
+      use WWW::Shorten::Flickr;
+      use WWW::Shorten 'Flickr';
 
-WWW::Shorten::Flickr installation is straightforward. If your CPAN shell is set up,
-you should just be able to do
+      $short_url = makeashorterlink($long_url);
+      $long_url  = makealongerlink($short_url);
 
-    % cpan WWW::Shorten::Flickr
+      $short_url = makeashorterlink($long_url, 'YOUR flic.kr USER NAME');
 
-Download it, unpack it, then build it as per the usual:
+DESCRIPTION
+    WWW::Shorten::Flickr is Perl interface to the web api flic.kr.
 
-    % perl Makefile.PL
-    % make && make test
+Functions
+  makeashorterlink
+    The function "makeashorterlink" will call the Flickr URL Shortener web
+    site passing it your long URL and will return the shorter Flickr URL
+    Shortener version.
 
-Then install it:
+  makealongerlink
+    The function "makealongerlink" does the reverse. "makealongerlink" will
+    accept as an argument either the full Flickr URL Shortener URL or just
+    the Flickr URL Shortener identifier.
 
-    % make install
+    If anything goes wrong, then either function will return "undef".
 
-DOCUMENTATION
+AUTHOR
+    Shinsuke Matsui <smatsui <at> karashi <döt> org>
 
-WWW::Shorten::Flickr documentation is available as in POD. So you can do:
+SEE ALSO
+    WWW::Shorten, <http://flic.kr/>
 
-    % perldoc WWW::Shorten::Flickr
+LICENSE
+    This library is free software; you can redistribute it and/or modify it
+    under the same terms as Perl itself.
 
-to read the documentation online with your favorite pager.
-
-Shinsuke Matsui
