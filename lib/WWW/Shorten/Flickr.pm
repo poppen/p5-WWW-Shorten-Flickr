@@ -11,8 +11,8 @@ use Encode::Base58;
 
 sub makeashorterlink {
     my $uri = shift or croak 'No URL passed to makeashorterlink';
-    
-    if ($uri =~ /www\.flickr\.com\/photos\/\w+\/(\d+)/) {
+
+    if ( $uri =~ /www\.flickr\.com\/photos\/\w+\/(\d+)/ ) {
         my $encoded_id = encode_base58($1);
         return qq{http://flic.kr/p/$encoded_id};
     }
