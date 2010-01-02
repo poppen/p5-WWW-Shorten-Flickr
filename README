@@ -25,7 +25,7 @@ Functions
     If anything goes wrong, then either function will return "undef".
 
 AUTHOR
-    Shinsuke Matsui <smatsui <at> karashi <döt> org>
+    Shinsuke Matsui <smatsui@karashi.org>
 
 SEE ALSO
     WWW::Shorten, <http://flic.kr/>

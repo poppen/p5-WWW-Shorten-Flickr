@@ -79,7 +79,7 @@ If anything goes wrong, then either function will return C<undef>.
 
 =head1 AUTHOR
 
-Shinsuke Matsui E<lt>smatsui <at> karashi <döt> orgE<gt>
+Shinsuke Matsui <smatsui@karashi.org>
 
 =head1 SEE ALSO
 
