@@ -30,9 +30,18 @@ sub makealongerlink {
 
     my $res = $ua->get($uri);
     return unless $res->is_redirect;
-    $res = $ua->get( $res->request->uri );
-    return unless $res->is_redirect;
-    return "http://www.flickr.com" . $res->header('Location');
+    while ( $res->header('Location')
+        !~ m!(?:http://www\.flickr\.com)?/photos/\w+/\d+/! )
+    {
+        $res = $ua->get( $res->request->uri );
+        return unless $res->is_redirect;
+    }
+    if ( $res->header('Location') =~ m!/photos/\w+/\d+/! ) {
+        return sprintf( "http://www.flickr.com%s", $res->header('Location') );
+    }
+    else {
+        return $res->header('Location');
+    }
 }
 
 1;
