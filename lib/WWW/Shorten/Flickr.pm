@@ -59,8 +59,6 @@ WWW::Shorten::Flickr -  Perl interface to flic.kr
   $short_url = makeashorterlink($long_url);
   $long_url  = makealongerlink($short_url);
 
-  $short_url = makeashorterlink($long_url, 'YOUR flic.kr USER NAME');
-
 =head1 DESCRIPTION
 
 WWW::Shorten::Flickr is Perl interface to the web api flic.kr.
