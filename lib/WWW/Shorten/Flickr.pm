@@ -12,11 +12,17 @@ use Encode::Base58;
 sub makeashorterlink {
     my $uri = shift or croak 'No URL passed to makeashorterlink';
 
-    if ( $uri =~ /www\.flickr\.com\/photos\/\w+\/(\d+)/ ) {
-        my $encoded_id = encode_base58($1);
-        return qq{http://flic.kr/p/$encoded_id};
+    my $photo_id;
+    if (   $uri =~ m!^http://www\.flickr\.com/photos/\w+/(\d+)!i
+        || $uri =~ /^(\d+)$/ )
+    {
+        $photo_id = $1;
     }
-    return;
+    else {
+        return;
+    }
+
+    return sprintf( "http://flic.kr/p/%s", encode_base58($photo_id) );
 }
 
 sub makealongerlink {
