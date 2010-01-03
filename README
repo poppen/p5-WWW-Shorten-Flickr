@@ -9,13 +9,15 @@ SYNOPSIS
       $long_url  = makealongerlink($short_url);
 
 DESCRIPTION
-    WWW::Shorten::Flickr is Perl interface to the web api flic.kr.
+    WWW::Shorten::Flickr is Perl interface to the flic.kr.
 
 Functions
   makeashorterlink
-    The function "makeashorterlink" will call the Flickr URL Shortener web
-    site passing it your long URL and will return the shorter Flickr URL
-    Shortener version.
+    The function "makeashorterlink" will return the shorter Flickr URL
+    Shortener version. "makeashorterlink" will accept as an argument either
+    the full Flickr URL or just the Flickr identifier of the photo.
+
+    If anything goes wrong, then either function will return "undef".
 
   makealongerlink
     The function "makealongerlink" does the reverse. "makealongerlink" will

@@ -12,14 +12,16 @@ WWW::Shorten::Flickr -  Perl interface to flic.kr
 
 =head1 DESCRIPTION
 
-WWW::Shorten::Flickr is Perl interface to the web api flic.kr.
+WWW::Shorten::Flickr is Perl interface to the flic.kr.
 
 =head1 Functions
 
 =head2 makeashorterlink
 
-The function C<makeashorterlink> will call the Flickr URL Shortener web site passing
-it your long URL and will return the shorter Flickr URL Shortener version.
+The function C<makeashorterlink> will return the shorter Flickr URL Shortener version. C<makeashorterlink> 
+will accept as an argument either the full Flickr URL or just the Flickr identifier of the photo.
+
+If anything goes wrong, then either function will return C<undef>.
 
 =head2 makealongerlink
 
