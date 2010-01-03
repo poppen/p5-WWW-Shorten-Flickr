@@ -23,25 +23,13 @@ sub makealongerlink {
     my $uri = shift or croak 'No URL passed to makealongerlink';
 
     my $ua = __PACKAGE__->ua();
+    push @{ $ua->requests_redirectable }, 'GET';
 
     $uri = "http://flic.kr/p/$uri" unless $uri =~ m!^http://!i;
 
-    $uri =~ s!flic\.kr!www.flickr.com!;
-
     my $res = $ua->get($uri);
-    return unless $res->is_redirect;
-    while ( $res->header('Location')
-        !~ m!(?:http://www\.flickr\.com)?/photos/\w+/\d+/! )
-    {
-        $res = $ua->get( $res->request->uri );
-        return unless $res->is_redirect;
-    }
-    if ( $res->header('Location') =~ m!/photos/\w+/\d+/! ) {
-        return sprintf( "http://www.flickr.com%s", $res->header('Location') );
-    }
-    else {
-        return $res->header('Location');
-    }
+    return if $res->redirects() == 0;
+    return $res->request->uri;
 }
 
 1;
