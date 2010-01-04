@@ -6,9 +6,10 @@ inc
 pm_to_blib
 Makefile.old
 old/
-*.swp
+*.sw[po]
 nytprof/
 nytprof.out
 *.bak
 have_make
 dist/
+MANIFEST.bak
