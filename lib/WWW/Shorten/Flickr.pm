@@ -13,7 +13,7 @@ sub makeashorterlink {
     my $uri = shift or croak 'No URL passed to makeashorterlink';
 
     my $photo_id;
-    if (   $uri =~ m!^http://www\.flickr\.com/photos/\w+/(\d+)!i
+    if (   $uri =~ m!^http://www\.flickr\.com/photos/[\w@-]+/(\d+)!i
         || $uri =~ /^(\d+)$/ )
     {
         $photo_id = $1;
