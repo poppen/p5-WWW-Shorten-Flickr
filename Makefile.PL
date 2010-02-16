@@ -11,6 +11,7 @@ requires 'WWW::Shorten';
 requires 'Encode::Base58';
 
 build_requires 'Test::More';
-auto_set_repository;
 auto_include;
+author_tests('xt');
+auto_set_repository;
 WriteAll;
