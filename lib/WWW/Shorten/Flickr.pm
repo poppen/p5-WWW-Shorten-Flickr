@@ -1,6 +1,7 @@
 package WWW::Shorten::Flickr;
 use strict;
 use warnings;
+use 5.008_001;
 use base qw( WWW::Shorten::generic Exporter );
 our @EXPORT = qw( makeashorterlink makealongerlink );
 
